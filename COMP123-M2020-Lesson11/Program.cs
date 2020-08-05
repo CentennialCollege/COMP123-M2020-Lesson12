@@ -10,6 +10,9 @@ namespace COMP123_M2020_Lesson11
     {
         public static List<Contact> contacts;
 
+        public static DBViewForm dbViewForm;
+        public static ContactInfoForm contactInfoForm;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -21,7 +24,10 @@ namespace COMP123_M2020_Lesson11
 
             contacts = new List<Contact>(); // new empty list of contacts
 
-            Application.Run(new DBViewForm());
+            dbViewForm = new DBViewForm();
+            contactInfoForm = new ContactInfoForm();
+
+            Application.Run(dbViewForm);
         }
     }
 }

@@ -77,5 +77,11 @@ namespace COMP123_M2020_Lesson11
             }
             
         }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            Program.contactInfoForm.Show();
+            this.Hide();
+        }
     }
 }

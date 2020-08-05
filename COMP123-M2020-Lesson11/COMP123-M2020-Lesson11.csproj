@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contact.cs" />
+    <Compile Include="ContactInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactInfoForm.Designer.cs">
+      <DependentUpon>ContactInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ContactInfoForm.resx">
+      <DependentUpon>ContactInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DBViewForm.resx">
       <DependentUpon>DBViewForm.cs</DependentUpon>
     </EmbeddedResource>
