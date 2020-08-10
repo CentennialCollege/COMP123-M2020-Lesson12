@@ -10,6 +10,7 @@ namespace COMP123_M2020_Lesson11
     {
         public static DBViewForm dbViewForm;
         public static ContactInfoForm contactInfoForm;
+        public static AboutBoxForm aboutBoxForm;
 
         /// <summary>
         /// The main entry point for the application.
@@ -22,6 +23,7 @@ namespace COMP123_M2020_Lesson11
 
             dbViewForm = new DBViewForm();
             contactInfoForm = new ContactInfoForm();
+            aboutBoxForm = new AboutBoxForm();
 
             Application.Run(dbViewForm);
         }

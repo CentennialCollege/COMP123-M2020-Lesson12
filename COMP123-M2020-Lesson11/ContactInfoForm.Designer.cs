@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContactInfoForm));
             this.PrimaryMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,8 +46,11 @@
             this.ContactNumberTextBox = new System.Windows.Forms.TextBox();
             this.ContactComboBox = new System.Windows.Forms.ComboBox();
             this.ContactListLabel = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.PrimaryMenuStrip.SuspendLayout();
             this.ContactInfoGroupBox.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PrimaryMenuStrip
@@ -105,7 +109,7 @@
             this.ContactInfoGroupBox.Controls.Add(this.FirstNameTextBox);
             this.ContactInfoGroupBox.Controls.Add(this.FirstNameLabel);
             this.ContactInfoGroupBox.ForeColor = System.Drawing.Color.Black;
-            this.ContactInfoGroupBox.Location = new System.Drawing.Point(303, 27);
+            this.ContactInfoGroupBox.Location = new System.Drawing.Point(303, 52);
             this.ContactInfoGroupBox.Name = "ContactInfoGroupBox";
             this.ContactInfoGroupBox.Size = new System.Drawing.Size(445, 368);
             this.ContactInfoGroupBox.TabIndex = 2;
@@ -188,7 +192,7 @@
             // 
             this.ContactComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.ContactComboBox.FormattingEnabled = true;
-            this.ContactComboBox.Location = new System.Drawing.Point(12, 100);
+            this.ContactComboBox.Location = new System.Drawing.Point(12, 125);
             this.ContactComboBox.Name = "ContactComboBox";
             this.ContactComboBox.Size = new System.Drawing.Size(245, 145);
             this.ContactComboBox.TabIndex = 3;
@@ -197,17 +201,38 @@
             // ContactListLabel
             // 
             this.ContactListLabel.AutoSize = true;
-            this.ContactListLabel.Location = new System.Drawing.Point(12, 65);
+            this.ContactListLabel.Location = new System.Drawing.Point(12, 90);
             this.ContactListLabel.Name = "ContactListLabel";
             this.ContactListLabel.Size = new System.Drawing.Size(159, 31);
             this.ContactListLabel.TabIndex = 4;
             this.ContactListLabel.Text = "Contact List";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(784, 25);
+            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // openToolStripButton
+            // 
+            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
+            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripButton.Name = "openToolStripButton";
+            this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.openToolStripButton.Text = "&Open";
+            this.openToolStripButton.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // ContactInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ContactListLabel);
             this.Controls.Add(this.ContactComboBox);
             this.Controls.Add(this.ContactInfoGroupBox);
@@ -225,6 +250,8 @@
             this.PrimaryMenuStrip.PerformLayout();
             this.ContactInfoGroupBox.ResumeLayout(false);
             this.ContactInfoGroupBox.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +276,7 @@
         private System.Windows.Forms.Label FirstNameLabel;
         private System.Windows.Forms.ComboBox ContactComboBox;
         private System.Windows.Forms.Label ContactListLabel;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton openToolStripButton;
     }
 }

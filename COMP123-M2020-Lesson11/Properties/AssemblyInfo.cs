@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("COMP123-M2020-Lesson11")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("COMP123-M2020-Lesson12")]
+[assembly: AssemblyDescription("Demo Project for Lesson 12")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("COMP123-M2020-Lesson11")]
+[assembly: AssemblyProduct("COMP123-M2020-Lesson12")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

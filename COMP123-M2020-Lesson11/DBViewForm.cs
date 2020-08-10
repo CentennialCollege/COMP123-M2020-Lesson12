@@ -73,5 +73,10 @@ namespace COMP123_M2020_Lesson11
             Program.contactInfoForm.Show();
             this.Hide();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.aboutBoxForm.ShowDialog();
+        }
     }
 }
