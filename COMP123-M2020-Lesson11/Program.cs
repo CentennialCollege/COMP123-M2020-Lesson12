@@ -8,8 +8,6 @@ namespace COMP123_M2020_Lesson11
 {
     public static class Program
     {
-        public static List<Contact> contacts;
-
         public static DBViewForm dbViewForm;
         public static ContactInfoForm contactInfoForm;
 
@@ -21,8 +19,6 @@ namespace COMP123_M2020_Lesson11
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            contacts = new List<Contact>(); // new empty list of contacts
 
             dbViewForm = new DBViewForm();
             contactInfoForm = new ContactInfoForm();

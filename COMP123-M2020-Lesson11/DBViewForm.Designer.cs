@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ContactsDataGridView = new System.Windows.Forms.DataGridView();
-            this.lesson11DBDataSet = new COMP123_M2020_Lesson11.Lesson11DBDataSet();
+            this.lesson11DBDataSet = new COMP123_M2020_Lesson11.Lesson12DBDataSet();
             this.contactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactsTableAdapter = new COMP123_M2020_Lesson11.Lesson11DBDataSetTableAdapters.ContactsTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -204,7 +204,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView ContactsDataGridView;
-        private Lesson11DBDataSet lesson11DBDataSet;
+        private Lesson12DBDataSet lesson11DBDataSet;
         private System.Windows.Forms.BindingSource contactsBindingSource;
         private Lesson11DBDataSetTableAdapters.ContactsTableAdapter contactsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;

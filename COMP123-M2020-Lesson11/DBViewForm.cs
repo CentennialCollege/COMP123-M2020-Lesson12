@@ -24,23 +24,6 @@ namespace COMP123_M2020_Lesson11
             // TODO: This line of code loads data into the 'lesson11DBDataSet.Contacts' table. You can move, or remove it, as needed.
            this.contactsTableAdapter.Fill(this.lesson11DBDataSet.Contacts);
 
-            var contacts =
-                 (from contact in this.lesson11DBDataSet.Contacts
-                  orderby contact.LastName
-                  select contact).ToList();
-
-            foreach (var contact in contacts)
-            {
-                var newContact = new Contact(
-                    contact.FirstName,
-                    contact.LastName,
-                    contact.EmailAddress,
-                    contact.ContactNumber
-                    );
-
-                Program.contacts.Add(newContact);
-            }
-
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,12 +46,19 @@ namespace COMP123_M2020_Lesson11
 
                 // write to the file
 
-                foreach (var contact in Program.contacts)
+                using (var db = new ContactModel()) // Entity Framework
                 {
-                    streamWriter.WriteLine(contact.FirstName);
-                    streamWriter.WriteLine(contact.LastName);
-                    streamWriter.WriteLine(contact.EmailAddress);
-                    streamWriter.WriteLine(contact.ContactNumber);
+                    var contacts = (from contact in db.Contacts
+                        select contact).ToList();
+
+
+                    foreach (var contact in contacts)
+                    {
+                        streamWriter.WriteLine(contact.FirstName);
+                        streamWriter.WriteLine(contact.LastName);
+                        streamWriter.WriteLine(contact.EmailAddress);
+                        streamWriter.WriteLine(contact.ContactNumber);
+                    }
                 }
 
                 // clean up
