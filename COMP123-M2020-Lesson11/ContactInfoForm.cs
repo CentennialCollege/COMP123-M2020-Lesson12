@@ -24,9 +24,6 @@ namespace COMP123_M2020_Lesson11
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Contacts = new List<Contact>(); // instantiates the List container
-
-
             // configure the open file dialog
             ContactListOpenFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
 
@@ -38,8 +35,12 @@ namespace COMP123_M2020_Lesson11
                 // create a new stream reader
                 StreamReader streamReader = new StreamReader(ContactListOpenFileDialog.FileName);
 
-                // read in the list
+                Contacts = new List<Contact>(); // instantiates a new List container
 
+                // clear content from TextBoxes
+                ResetForm();
+
+                // read in the list from the file
                 while (!streamReader.EndOfStream)
                 {
                     var contact = new Contact();
@@ -77,6 +78,36 @@ namespace COMP123_M2020_Lesson11
             LastNameTextBox.Text = Contacts[ContactComboBox.SelectedIndex].LastName;
             EmailAddressTextBox.Text = Contacts[ContactComboBox.SelectedIndex].EmailAddress;
             ContactNumberTextBox.Text = Contacts[ContactComboBox.SelectedIndex].ContactNumber;
+        }
+
+        private void ReselectButton_Click(object sender, EventArgs e)
+        {
+            Program.dbViewForm.Show();
+            this.Hide();
+        }
+
+        private void ContactInfoForm_Activated(object sender, EventArgs e)
+        {
+            // clear content from TextBoxes
+            ResetForm();
+
+            Contacts = new List<Contact>(); // instantiates a new List container
+
+            // Add a new contact to the Contact CombotBox List
+            ContactComboBox.Items.Add(Program.selectedContact.LastName);
+            Contacts.Add(Program.selectedContact);
+            ContactComboBox.SelectedIndex = 0;
+        }
+
+        private void ResetForm()
+        {
+            FirstNameTextBox.Clear();
+            LastNameTextBox.Clear();
+            EmailAddressTextBox.Clear();
+            ContactNumberTextBox.Clear();
+
+            // clear Contact ComboBox List Items
+            ContactComboBox.Items.Clear();
         }
     }
 }

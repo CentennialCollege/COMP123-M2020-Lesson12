@@ -24,6 +24,7 @@ namespace COMP123_M2020_Lesson11
             // TODO: This line of code loads data into the 'lesson11DBDataSet.Contacts' table. You can move, or remove it, as needed.
            this.contactsTableAdapter.Fill(this.lesson11DBDataSet.Contacts);
 
+           ContactsDataGridView_CellClick(sender, e as DataGridViewCellEventArgs);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,6 +78,16 @@ namespace COMP123_M2020_Lesson11
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Program.aboutBoxForm.ShowDialog();
+        }
+
+        private void ContactsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Program.selectedContact.FirstName = ContactsDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            Program.selectedContact.LastName = ContactsDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+            Program.selectedContact.EmailAddress = ContactsDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            Program.selectedContact.ContactNumber = ContactsDataGridView.SelectedRows[0].Cells[3].Value.ToString();
+
+            SelectedContactTextBox.Text = $@"{Program.selectedContact.FirstName} {Program.selectedContact.LastName} {Program.selectedContact.EmailAddress} {Program.selectedContact.ContactNumber}";
         }
     }
 }

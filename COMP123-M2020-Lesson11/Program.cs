@@ -11,6 +11,7 @@ namespace COMP123_M2020_Lesson11
         public static DBViewForm dbViewForm;
         public static ContactInfoForm contactInfoForm;
         public static AboutBoxForm aboutBoxForm;
+        public static Contact selectedContact;
 
         /// <summary>
         /// The main entry point for the application.
@@ -20,6 +21,8 @@ namespace COMP123_M2020_Lesson11
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            selectedContact = new Contact();
 
             dbViewForm = new DBViewForm();
             contactInfoForm = new ContactInfoForm();
